@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+body {
+    background-color: #92007b;
+    background: linear-gradient(
+        to bottom,
+        #000,
+        #000
+    ); 
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    min-height: 100vh;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 420px;
+    border-radius: 12px;
+}
+
+.banner-album {
+    cursor: pointer;
+}
+
+#btn-inicio{
+    color: white;
+}
+
+/* config navbar */
+.navbar {
+    border-bottom: 1px solid #92007c98;
+    padding: 15px 20px;
+    color: white 
+}
+
+.navbar img {
+    width: 100px;
+}
+
+.navbar-toggler {
+    border: 1px solid white;
+    color: white !important;
+    font-size: 1.5rem;
+
+}
+
+.navbar .nav-link {
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: x-large;
+    color: white;
+}
+
+.navbar .nav-link:hover {
+    background: #92007b;
+    color: #fff !important;
+}
+
+main {
+    padding-top: 20px;
+}
+
+
+/* config dos cards */
+.card {
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px #92007b;
+    transition: 0.3s;
+}
+
+.card h2 {
+    color: white;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.09);
+    background: #e3007b;
+    color: #fff;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ==========================
+   BOTÃO FAVORITO
+========================== */
+
+.btn-favorito {
+
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.75);
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .3s;
+
+    z-index: 100;
+
+}
+
+.btn-favorito:hover {
+
+    transform: scale(1.15);
+
+    color: #ff3b6b;
+
+    background: rgba(0,0,0,.9);
+
+}
+
+.btn-favorito.ativo {
+
+    color: #ff1744;
+
+}
+
+.btn-favorito.ativo:hover {
+
+    color: #ff4569;
+
+}
+
+/* Config página detalhes */
+.detalhes-main {
+    min-height: calc(100vh - 140px);
+}
+
+.album-details {
+    min-height: 70vh;
+}
+
+.album-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#album-image {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+#album-image:hover{
+    transform: translateY(-12px) scale(1.09);
+}
+
+.list-group-item:hover {
+    background: #92007b !important;
+    transform: translateX(5px);
+    border-radius: 12px;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+footer {
+    border-top: 1px solid black;
+    margin-top: 20px;
+    background-color: black;
+}
+
+/*Mudando visual da barra de scroll*/
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #92007b;
+    border-radius: 20px;
+
+}
+
+/* .grafico-container {
+    width: 33%;
+    min-width: 280px;
+    margin: 0 auto;
+}
+
+#graficoGeneros {
+    width: 100% !important;
+    height: auto !important;
+} */
+
+.grafico-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grafico-container {
+    width: 35%;
+    min-width: 320px;
+}
+
+.tabela-footer {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.tabela-footer > tbody > tr > td {
+    width: 50%;
+    padding: 20px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.texto-site {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info-aluno {
+    margin: auto;
+}
+
+.info-aluno th,
+.info-aluno td {
+    padding: 8px 12px;
+    text-align: center;
+}
+
+.info-aluno th {
+    font-weight: bold;
+}
+
