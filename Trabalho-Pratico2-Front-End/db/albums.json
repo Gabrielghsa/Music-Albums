@@ -1,4 +1,41 @@
 {
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Gabriel",
+      "email": "gabriel@gmail.com",
+      "senha": "123456",
+      "favoritos": [
+        "CicU2DWd5SI",
+        "4E8-ew0yWmA",
+        "571KH780rxw",
+        "sngAvd3h0sQ",
+        "_IRorJthNSY",
+        "2nEurZHpFMc",
+        "nPRS82ohKNA"
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Maria",
+      "email": "maria@gmail.com",
+      "senha": "123456",
+      "favoritos": []
+    },
+    {
+      "nome": "Macrebinho",
+      "email": "macrebs@123",
+      "senha": "123",
+      "id": "70zTd8VPRiA",
+      "favoritos": [
+        "cASJKDwbeP4",
+        "sngAvd3h0sQ",
+        "_IRorJthNSY",
+        "nPRS82ohKNA",
+        "qp6LOSDXmNc"
+      ]
+    }
+  ],
   "albums": [
     {
       "nome": "Stadium Arcadium",
@@ -700,20 +737,5 @@
       "id": "kTpuAN4iH3Q"
     }
   ],
-  "usuarios": [
-    {
-      "id": "1",
-      "nome": "Gabriel Henrique",
-      "login": "gabriel",
-      "senha": "123456"
-    },
-    {
-      "nome": "gabriel",
-      "email": "gabriel@123",
-      "senha": "ghsa123",
-      "id": "asNwk12LB68"
-    }
-  ],
-  "favoritos": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

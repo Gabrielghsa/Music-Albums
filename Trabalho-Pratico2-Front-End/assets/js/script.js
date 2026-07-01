@@ -1,19 +1,6 @@
 
 
 
-
-
-
-/* if (usuarioLogado) {
-
-    const nomeUsuario = document.getElementById("nomeUsuario");
-
-    if (nomeUsuario) {
-        nomeUsuario.textContent = `Olá, ${usuarioLogado.nome}`;
-    }
-
-} */
-
 let albums = [];
 async function carregarAlbums() {
     try {
@@ -33,6 +20,7 @@ function iniciarSite() {
 
     criarCards(albums);
     configurarPesquisa();
+    criarGrafico()
 }
 
 const carouselContainer = document.getElementById("carousel-container");
@@ -217,25 +205,80 @@ function criarCards(listaAlbums) {
     });
 
     const botoesFavorito = document.querySelectorAll(".btn-favorito");
-    
+
     botoesFavorito.forEach(botao => {
-    
+
+    const album = albums[botao.dataset.id];
+
+    // Usuário não logado
+    if (!usuarioLogado) {
+
         botao.addEventListener("click", () => {
-    
-            botao.classList.toggle("ativo");
-    
-            if (botao.classList.contains("ativo")) {
-    
-                botao.textContent = "♥";
-    
-            } else {
-    
-                botao.textContent = "♡";
-    
-            }
-    
+
+            alert("Faça login para favoritar álbuns.");
+
+            window.location.href = "login.html";
+
         });
-    
+
+        return;
+    }
+
+    // Marca os favoritos já existentes
+    if (
+        usuarioLogado.favoritos &&
+        usuarioLogado.favoritos.includes(album.id)
+    ) {
+
+        botao.classList.add("ativo");
+        botao.textContent = "♥";
+
+    }
+
+    botao.addEventListener("click", async () => {
+
+        let favoritos = usuarioLogado.favoritos || [];
+
+        if (favoritos.includes(album.id)) {
+
+            favoritos = favoritos.filter(id => id !== album.id);
+
+            botao.classList.remove("ativo");
+            botao.textContent = "♡";
+
+        } else {
+
+            favoritos.push(album.id);
+
+            botao.classList.add("ativo");
+            botao.textContent = "♥";
+
+        }
+
+        usuarioLogado.favoritos = favoritos;
+
+        // Atualiza a sessão
+        sessionStorage.setItem(
+            "usuarioLogado",
+            JSON.stringify(usuarioLogado)
+        );
+
+        // Atualiza o JSON Server
+        await fetch(
+            `http://localhost:3000/usuarios/${usuarioLogado.id}`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    favoritos: favoritos
+                })
+            }
+        );
+
+    });
+
     });
 }
 
@@ -351,7 +394,7 @@ function criarGrafico() {
                     text: "Distribuição dos Gêneros Musicais",
                     color: "#ffffff",
                     font: {
-                        size: 20
+                        size: 20   
                     }
                 }
             }
