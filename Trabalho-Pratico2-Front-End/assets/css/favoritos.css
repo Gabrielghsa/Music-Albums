@@ -1,101 +1,51 @@
-/* ===========================
-    TÍTULO
-=========================== */
 
 .titulo-favoritos{
-
     text-align:center;
-
     padding:40px 20px;
-
 }
 
 .titulo-favoritos h1{
-
     color:#fff;
-
     font-size:42px;
-
     font-weight:bold;
-
 }
 
 .titulo-favoritos p{
-
     color:#bbbbbb;
-
     font-size:18px;
-
     margin-top:10px;
-
 }
-
-/* ===========================
-    CARDS
-=========================== */
 
 #favoritos-container{
-
     min-height:350px;
-
 }
 
-/* ===========================
-    SEM FAVORITOS
-=========================== */
-
 #sem-favoritos{
-
     color:white;
-
     padding:70px 0;
-
 }
 
 #sem-favoritos h3{
-
     margin-bottom:15px;
-
 }
-
-/* ===========================
-    NAVBAR
-=========================== */
 
 .nav-link.active{
-
     color:#ff4ddb !important;
-
     font-weight:bold;
-
 }
 
-/* ===========================
-    ANIMAÇÕES
-=========================== */
-
 .titulo-favoritos{
-
     animation:fadeIn .8s ease;
 
 }
 
 @keyframes fadeIn{
-
     from{
-
         opacity:0;
-
         transform:translateY(-20px);
-
     }
-
     to{
-
         opacity:1;
-
         transform:translateY(0);
-
     }
-
 }

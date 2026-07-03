@@ -402,5 +402,6 @@ function criarGrafico() {
     })
 }
 
+
 carregarAlbums();
 

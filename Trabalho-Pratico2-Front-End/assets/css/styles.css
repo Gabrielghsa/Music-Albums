@@ -54,6 +54,10 @@ body {
 
 }
 
+#item-cadastro{
+    color: red;
+}
+
 .navbar .nav-link {
     border-radius: 10px;
     transition: 0.3s;
@@ -93,61 +97,37 @@ main {
     object-fit: cover;
 }
 
-/* ==========================
-   BOTÃO FAVORITO
-========================== */
-
 .btn-favorito {
-
     position: absolute;
-
     top: 10px;
     right: 10px;
-
     width: 42px;
     height: 42px;
-
     border: none;
     border-radius: 50%;
-
     background: rgba(0,0,0,.75);
-
     color: white;
-
     font-size: 24px;
-
     cursor: pointer;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: .3s;
-
     z-index: 100;
-
 }
 
 .btn-favorito:hover {
-
     transform: scale(1.15);
-
     color: #ff3b6b;
-
     background: rgba(0,0,0,.9);
-
 }
 
 .btn-favorito.ativo {
-
     color: #ff1744;
-
 }
 
 .btn-favorito.ativo:hover {
-
     color: #ff4569;
-
 }
 
 /* Config página detalhes */
@@ -208,17 +188,6 @@ footer {
     border-radius: 20px;
 
 }
-
-/* .grafico-container {
-    width: 33%;
-    min-width: 280px;
-    margin: 0 auto;
-}
-
-#graficoGeneros {
-    width: 100% !important;
-    height: auto !important;
-} */
 
 .grafico-wrapper {
     display: flex;

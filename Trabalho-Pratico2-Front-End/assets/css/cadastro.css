@@ -1,0 +1,168 @@
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#formAlbum {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.navbar {
+    border-bottom: 1px solid #92007c98;
+    padding: 15px 20px;
+    color: white
+}
+
+.navbar-brand,
+.navbar .nav-link,
+.navbar-toggler {
+    color: white !important;
+}
+
+.navbar .nav-link {
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: x-large;
+    color: white;
+}
+
+.navbar .nav-link:hover {
+    background: #92007b;
+    color: #fff !important;
+}
+
+.form-control {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    background-color: #333;
+    color: #fff;
+    border-color: #92007b;
+    box-shadow: 0 0 10px rgba(146, 0, 123, 0.4);
+}
+
+.table-responsive {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead {
+    background-color: #92007b;
+}
+
+.table thead th {
+    color: white !important;
+    border: none;
+}
+
+.table tbody tr {
+    background-color: #2a2a2a;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #333333;
+}
+
+.table tbody tr:hover {
+    background-color: #404040;
+}
+
+.table td,
+.table th {
+    color: white !important;
+    border-color: #444;
+}
+
+.btn-danger,
+.btn-warning,
+.btn-secondary {
+    background-color: #92007b !important;
+    border-color: #92007b !important;
+    color: white !important;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+
+.btn-danger:hover,
+.btn-warning:hover,
+.btn-secondary:hover {
+    background-color: #b30096 !important;
+    border-color: #b30096 !important;
+    transform: translateY(-2px);
+}
+
+h1,
+h2,
+label {
+    color: white;
+}
+
+hr {
+    border-color: #444;
+}
+
+.table-responsive {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/* Corrigindo bootstrap aplicando estilos próprios */
+.table {
+    --bs-table-bg: #2a2a2a;
+    --bs-table-striped-bg: #333333;
+    --bs-table-hover-bg: #404040;
+    --bs-table-color: #ffffff;
+    --bs-table-striped-color: #ffffff;
+    --bs-table-hover-color: #ffffff;
+
+    background-color: #2a2a2a !important;
+    color: white !important;
+}
+
+.table thead,
+.table thead tr,
+.table thead th {
+    background-color: #92007b !important;
+    color: white !important;
+}
+
+.table tbody,
+.table tbody tr,
+.table tbody td {
+    background-color: #2a2a2a !important;
+    color: white !important;
+}
+
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #333333 !important;
+    color: white !important;
+}
+
+
+.table-hover > tbody > tr:hover > * {
+    background-color: #404040 !important;
+    color: white !important;
+}
+
+.table td,
+.table th {
+    border-color: #555 !important;
+}

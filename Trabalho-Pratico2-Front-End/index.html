@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +7,11 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <nav class="navbar navbar-expand-md">
             <div class="container-fluid">
                 <img src="logo.png" width="40" alt="Logo do site">
-
                 <button class="navbar-toggler" id="btn-menu" type="button" data-bs-toggle="collapse"
                     data-bs-target="#menuTopo">
                     ☰ <!-- Vai aparecer quando diminuir a tela -->
@@ -26,13 +23,16 @@
                                 Login
                             </a>
                         </li>
-
                         <li class="nav-item d-none" id="item-favoritos">
                             <a class="nav-link" href="favoritos.html">
                                 Favoritos
                             </a>
                         </li>
-
+                        <li class="nav-item d-none" id="item-cadastro">
+                            <a class="nav-link" href="crud.html">
+                                Cadastro
+                            </a>
+                        </li>
                         <li class="nav-item d-none" id="item-logout">
                             <a class="nav-link" href="#" id="btnLogout">
                                 Logout
@@ -43,27 +43,22 @@
             </div>
         </nav>
     </header>
-
     <main class="container-fluid px-4">
-        <!--Banner-->
         <section class="banner mt-2">
             <div id="banner-carousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" id="carousel-container">
 
                 </div>
-                <!--Botão do carrossel para voltar a imagem anterior-->
                 <button class="carousel-control-prev" type="button" data-bs-target="#banner-carousel"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
-                <!-- Botão do carrossel para a próxima imagem -->
                 <button class="carousel-control-next" type="button" data-bs-target="#banner-carousel"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
         </section>
-
         <section class="container mt-4 mb-4">
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -71,10 +66,7 @@
                 </div>
             </div>
         </section>
-
-
         <section class="row mt-4 g-4" id="albums-container">
-            <!--Os cards serão criados aqui-->
         </section>
 
         <section class="container mt-5">
@@ -86,7 +78,6 @@
                 </div>
             </div>
         </section>
-
     </main>
     <footer class="text-center p-3">
         <p>&copy; 2026</p>
@@ -115,11 +106,9 @@
         </table>
     </footer>
 
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
-
 </html>
