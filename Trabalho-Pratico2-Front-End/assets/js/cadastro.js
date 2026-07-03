@@ -32,7 +32,8 @@ formCadastro.addEventListener("submit", async (event) => {
         const novoUsuario = {
             nome,
             email,
-            senha
+            senha,
+            favoritos: []
         };
 
         const cadastro = await fetch(

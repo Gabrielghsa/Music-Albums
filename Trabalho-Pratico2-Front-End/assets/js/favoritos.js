@@ -1,15 +1,10 @@
 const container = document.getElementById("favoritos-container");
 
-const usuarioAtual = JSON.parse(
-    sessionStorage.getItem("usuarioAtual")
-);
-
 async function mostrarFavoritos() {
-    const usuarioAtual = JSON.parse(
-    sessionStorage.getItem("usuarioLogado")
-);
 
-console.log(usuarioAtual);
+    const usuarioAtual = JSON.parse(
+        sessionStorage.getItem("usuarioLogado")
+    );
 
     if (!usuarioAtual) {
 
@@ -22,15 +17,12 @@ console.log(usuarioAtual);
     const resposta = await fetch("http://localhost:3000/albums");
     const albums = await resposta.json();
 
-
-
     // Filtra apenas os favoritos do usuário
     const favoritos = albums.filter(album =>
         usuarioAtual.favoritos &&
         usuarioAtual.favoritos.includes(album.id)
     );
 
-    
     container.innerHTML = "";
 
     if (favoritos.length === 0) {
@@ -104,11 +96,11 @@ console.log(usuarioAtual);
 
     });
 
-    adicionarEventos(albums);
+    adicionarEventos(albums, usuarioAtual);
 
 }
 
-function adicionarEventos(albums) {
+function adicionarEventos(albums, usuarioAtual) {
 
     // Ver detalhes
     document.querySelectorAll(".btn-detalhes")
@@ -142,14 +134,14 @@ function adicionarEventos(albums) {
                         id !== botao.dataset.id
                     );
 
-                // Atualiza sessão
+                // Atualiza a sessão
                 sessionStorage.setItem(
-                    "usuarioAtual",
+                    "usuarioLogado",
                     JSON.stringify(usuarioAtual)
                 );
 
-                // Atualiza JSON Server
-                await fetch(
+                // Atualiza o JSON Server
+                const resposta = await fetch(
                     `http://localhost:3000/usuarios/${usuarioAtual.id}`,
                     {
                         method: "PATCH",
@@ -162,6 +154,13 @@ function adicionarEventos(albums) {
                     }
                 );
 
+                if (!resposta.ok) {
+
+                    alert("Erro ao remover favorito.");
+                    return;
+
+                }
+
                 mostrarFavoritos();
 
             });
@@ -169,12 +168,4 @@ function adicionarEventos(albums) {
         });
 
 }
-
 mostrarFavoritos();
-
-
-
-
-
-
-
