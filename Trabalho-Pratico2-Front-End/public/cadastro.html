@@ -14,7 +14,7 @@
 
             <h1>Criar Conta</h1>
 
-            <form id="cadastroForm">
+            <form id="cadastroForm" autocomplete="off">
 
                 <div class="campo">
                     <label for="nome">Nome</label>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="campo">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" autocomplete="off" required>
                 </div>
                 <div class="campo">
                     <label for="senha">Senha</label>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="campo">
                     <label for="confirmarSenha">Confirmar Senha</label>
-                    <input type="password" id="confirmarSenha" placeholder="Confirme sua senha" required>
+                    <input type="password" id="confirmarSenha" placeholder="Confirme sua senha" autocomplete="off" required>
                 </div>
                 <button type="submit" class="btn-login">
                     Cadastrar

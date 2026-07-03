@@ -7,12 +7,11 @@
       "senha": "123456",
       "admin": true,
       "favoritos": [
-        "CicU2DWd5SI",
-        "4E8-ew0yWmA",
-        "571KH780rxw",
         "_IRorJthNSY",
         "2nEurZHpFMc",
-        "nPRS82ohKNA"
+        "nPRS82ohKNA",
+        "sngAvd3h0sQ",
+        "cASJKDwbeP4"
       ]
     },
     {
@@ -21,7 +20,11 @@
       "email": "maria@gmail.com",
       "senha": "123456",
       "admin": false,
-      "favoritos": []
+      "favoritos": [
+        "2nEurZHpFMc",
+        "nPRS82ohKNA",
+        "cASJKDwbeP4"
+      ]
     },
     {
       "nome": "Macrebinho",
@@ -29,14 +32,7 @@
       "senha": "123",
       "admin": false,
       "id": "70zTd8VPRiA",
-      "favoritos": [
-        "cASJKDwbeP4",
-        "sngAvd3h0sQ",
-        "nPRS82ohKNA",
-        "2nEurZHpFMc",
-        "qp6LOSDXmNc",
-        "IiEImWZm--4"
-      ]
+      "favoritos": []
     },
     {
       "nome": "Juriscleia",
