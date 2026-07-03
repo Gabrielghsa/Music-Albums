@@ -1,6 +1,3 @@
-
-
-
 let albums = [];
 async function carregarAlbums() {
     try {
@@ -17,7 +14,6 @@ async function carregarAlbums() {
 }
 
 function iniciarSite() {
-
     criarCards(albums);
     configurarPesquisa();
     criarGrafico()
@@ -101,33 +97,23 @@ if (imagemAlbum) {
     );
 
     if (album) { //Se o álbum estiver salvo, as informações são adicionadas nos elementos
-
         imagemAlbum.src = album.imagem;
         imagemAlbum.alt = album.nome;
-
         document.getElementById("album-name")
             .textContent = album.nome;
-
         document.getElementById("album-band")
             .textContent = album.banda;
-
         document.getElementById("album-year")
             .textContent = album.ano;
-
         document.getElementById("album-label")
             .textContent = album.gravadora;
-
         document.getElementById("album-sales")
             .textContent = album.vendas;
-
         document.getElementById("album-hit")
             .textContent = album.maiorSucesso;
-
-
         const listaMusicas =
             document.getElementById("album-musics");
         listaMusicas.innerHTML = "";
-
         if (album.musicas.length > 10) {
             listaMusicas.classList.add(
                 "musicas-duas-colunas"
@@ -138,7 +124,6 @@ if (imagemAlbum) {
                 "musicas-duas-colunas"
             );
         }
-
         album.musicas.forEach(musica => {
             const li =
                 document.createElement("li"); //lista de músicas
@@ -150,33 +135,21 @@ if (imagemAlbum) {
     criarGrafico()
 }
 
-
 function criarCards(listaAlbums) {
-
     const container = document.getElementById("albums-container");
-
     if (!container) return;
-
     container.innerHTML = "";
-
     listaAlbums.forEach((album, index) => {
-
         const article = document.createElement("article");
-
         article.className =
             "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2";
-
         article.innerHTML = `
             <div class="card mb-4 h-100 position-relative">
-
                 <img src="${album.imagem}" class="card-img-top" alt="${album.nome}">
-
                 <div class="card-body d-flex flex-column">
-
                     <h2 class="card-title h5">
                         ${album.nome}
                     </h2>
-
                     <p class="card-text">
                         ${album.banda}
                     </p>
@@ -186,77 +159,49 @@ function criarCards(listaAlbums) {
                         title="Adicionar aos favoritos">
                         ♡
                     </button>
-
                     <button
                         class="btn btn-danger mt-auto btn-detalhes"
                         data-id="${albums.indexOf(album)}">
                         Ver Detalhes
                     </button>
-
                 </div>
             </div>
         `;
-
-        
-
         container.appendChild(article);
-
         adicionarEventosDetalhes();
     });
-
     const botoesFavorito = document.querySelectorAll(".btn-favorito");
-
     botoesFavorito.forEach(botao => {
-
     const album = albums[botao.dataset.id];
-
     // Usuário não logado
     if (!usuarioLogado) {
-
         botao.addEventListener("click", () => {
-
             alert("Faça login para favoritar álbuns.");
-
             window.location.href = "login.html";
-
         });
-
         return;
     }
-
     // Marca os favoritos já existentes
     if (
         usuarioLogado.favoritos &&
         usuarioLogado.favoritos.includes(album.id)
     ) {
-
         botao.classList.add("ativo");
         botao.textContent = "♥";
-
     }
 
     botao.addEventListener("click", async () => {
-
         let favoritos = usuarioLogado.favoritos || [];
-
         if (favoritos.includes(album.id)) {
-
             favoritos = favoritos.filter(id => id !== album.id);
-
             botao.classList.remove("ativo");
             botao.textContent = "♡";
-
         } else {
-
             favoritos.push(album.id);
-
             botao.classList.add("ativo");
             botao.textContent = "♥";
-
         }
-
         usuarioLogado.favoritos = favoritos;
-
         // Atualiza a sessão
         sessionStorage.setItem(
             "usuarioLogado",
@@ -276,68 +221,43 @@ function criarCards(listaAlbums) {
                 })
             }
         );
-
     });
-
     });
 }
 
-
-
 function adicionarEventosDetalhes() {
-
     document.querySelectorAll(".btn-detalhes")
         .forEach(botao => {
-
             botao.addEventListener("click", () => {
-
                 const albumSelecionado =
                     albums[botao.dataset.id];
-
                 localStorage.setItem(
                     "albumSelecionado",
                     JSON.stringify(albumSelecionado)
                 );
-
                 window.location.href = "detalhes.html";
-
             });
-
         });
-
 }
 
 function configurarPesquisa() {
-
     const pesquisa = document.getElementById("pesquisa");
-
     if (!pesquisa) return;
-
     pesquisa.addEventListener("input", () => {
-
         const texto = pesquisa.value.toLowerCase();
-
         const resultado = albums.filter(album =>
-
             album.nome.toLowerCase().includes(texto) ||
-
             album.banda.toLowerCase().includes(texto) ||
-
             album.genero.toLowerCase().includes(texto)
-
         );
-
         criarCards(resultado);
-
     });
-
 }
 
 function criarGrafico() {
     const canvas = document.getElementById("graficoGeneros");
     if (!canvas)
         return;
-
     const quantidadeGeneros = {};
     albums.forEach(album => {
         if (!quantidadeGeneros[album.genero]) {
@@ -345,7 +265,6 @@ function criarGrafico() {
         }
         quantidadeGeneros[album.genero]++
     });
-
     new Chart(canvas, {
         type: "pie",
         data: {
@@ -365,7 +284,6 @@ function criarGrafico() {
                 ],
                 borderColor: "#111111",
                 borderWidth: 4,
-
                 hoverBorderColor: "#FFFFFF",
                 hoverBorderWidth: 7
             }]
@@ -401,7 +319,5 @@ function criarGrafico() {
         }
     })
 }
-
-
 carregarAlbums();
 

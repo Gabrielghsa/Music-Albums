@@ -1,170 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favoritos</title>
-
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/favoritos.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-
     <header>
-
         <nav class="navbar navbar-expand-md">
-
             <div class="container-fluid">
-
                 <img src="logo.png" width="40" alt="Logo do site">
-
-                <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuTopo">
-
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTopo">
                     ☰
-
                 </button>
-
                 <div class="collapse navbar-collapse" id="menuTopo">
-
                    <ul class="navbar-nav ms-3">
                         <li class="nav-item" id="item-login">
                             <a class="nav-link" href="login.html">
                                 Login
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">
                                 Inicio
                             </a>
                         </li>
-
-
                         <li class="nav-item d-none" id="item-cadastro">
-
                             <a class="nav-link" href="crud.html">
-
                                 Cadastro
-
                             </a>
-
                         </li>
-
                         <li class="nav-item d-none" id="item-logout">
                             <a class="nav-link" href="#" id="btnLogout">
                                 Logout
                             </a>
                         </li>
                     </ul>
-
                 </div>
-
             </div>
-
         </nav>
-
     </header>
-
     <main class="container-fluid px-4">
-
         <section class="titulo-favoritos">
-
             <h1>
                 ❤️ Meus Favoritos
             </h1>
-
             <p>
                 Todos os álbuns marcados como favoritos.
             </p>
-
         </section>
-
         <section
             class="row mt-4 g-4"
             id="favoritos-container">
-
             <!-- Cards serão adicionados via JavaScript -->
-
         </section>
-
         <section
             id="sem-favoritos"
             class="text-center mt-5 d-none">
-
             <img
-                src="imgs/favoritos-vazio.png"
-                width="170"
-                alt="Sem favoritos">
-
+                src="imgs/favoritos-vazio.png" width="170" alt="Sem favoritos">
             <h3 class="mt-4">
                 Você ainda não possui favoritos.
             </h3>
-
             <a
-                href="index.html"
-                class="btn btn-danger mt-3">
-
+                href="index.html" class="btn btn-danger mt-3">
                 Explorar Álbuns
-
             </a>
-
         </section>
-
     </main>
-
     <footer class="text-center p-3">
-
         <p>&copy; 2026</p>
-
         <table class="tabela-footer">
-
             <tr>
-
                 <td class="texto-site">
                     Site contendo alguns álbuns e informações
                 </td>
-
                 <td>
-
                     <table class="info-aluno">
-
                         <tr>
                             <th>Nome:</th>
                             <td>Gabriel Henrique Santos de Assis</td>
                         </tr>
-
                         <tr>
                             <th>Turma:</th>
                             <td>Análise e Desenvolvimento de Sistemas</td>
                         </tr>
-
                         <tr>
                             <th>Matrícula:</th>
                             <td>926438</td>
                         </tr>
-
                     </table>
-
                 </td>
-
             </tr>
-
         </table>
-
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/favoritos.js"></script>
-
 </body>
-
 </html>
